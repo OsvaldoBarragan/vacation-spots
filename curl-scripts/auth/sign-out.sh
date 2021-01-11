@@ -1,11 +1,2 @@
-#!/bin/bash
-
-API="http://localhost:4741"
-URL_PATH="/sign-out"
-
-curl "${API}${URL_PATH}/" \
-  --include \
-  --request DELETE \
-  --header "Authorization: Bearer ${TOKEN}"
-
-echo
+curl --include --request DELETE http://localhost:4741/sign-out/ \
+  --header "Authorization: Bearer $TOKEN"

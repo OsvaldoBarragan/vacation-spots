@@ -1,17 +1,8 @@
-#!/bin/bash
-
-API="http://localhost:4741"
-URL_PATH="/sign-in"
-
-curl "${API}${URL_PATH}" \
-  --include \
-  --request POST \
+curl --include --request POST http://localhost:4741/sign-in \
   --header "Content-Type: application/json" \
   --data '{
     "credentials": {
-      "email": "'"${EMAIL}"'",
-      "password": "'"${PASSWORD}"'"
+      "email": "an@example.email",
+      "password": "an example password"
     }
   }'
-
-echo
