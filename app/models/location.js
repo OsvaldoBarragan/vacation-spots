@@ -38,6 +38,12 @@ const locationSchema = new mongoose.Schema({
   // Add the timestamps schema options, so updatedAt and createdAt timestamps
   // are added to the document.
   timestamps: true
+  // toObject: {
+  //   // remove `hashedPassword` field when we call `.toObject`
+  //   transform: (_doc, location) => {
+  //     return location
+  //   }
+  // }
 })
 // create a model for the Location, using the locationSchema
 // then export the Location model so it can be required and used in locationRoutes_routes.js
