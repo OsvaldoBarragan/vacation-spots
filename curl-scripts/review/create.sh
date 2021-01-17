@@ -1,7 +1,7 @@
-#!/bin/bash
+#reviews
 
 API="http://localhost:5000"
-URL_PATH="/examples"
+URL_PATH="/reviews"
 
 curl "${API}${URL_PATH}" \
   --include \
@@ -9,9 +9,11 @@ curl "${API}${URL_PATH}" \
   --header "Content-Type: application/json" \
   --header "Authorization: Bearer ${TOKEN}" \
   --data '{
-    "example": {
-      "text": "'"${TEXT}"'",
-      "title": "'"${TITLE}"'"
+    "review": {
+      "rating": "'"${RATING}"'",
+      "title": "'"${TITLE}"'",
+      "content": "'"${CONTENT}"'",
+      "locationId": "'"${LOCATION_ID}"'"
     }
   }'
 
