@@ -1,17 +1,16 @@
-#!/bin/bash
+#reviews
 
 API="http://localhost:5000"
-URL_PATH="/examples"
+URL_PATH="/reviews"
 
-curl "${API}${URL_PATH}" \
+curl "${API}${URL_PATH}/${ID}" \
   --include \
-  --request POST \
+  --request DELETE \
   --header "Content-Type: application/json" \
   --header "Authorization: Bearer ${TOKEN}" \
   --data '{
-    "example": {
-      "text": "'"${TEXT}"'",
-      "title": "'"${TITLE}"'"
+    "review": {
+      "locationId": "'"${LOCATION_ID}"'"
     }
   }'
 
